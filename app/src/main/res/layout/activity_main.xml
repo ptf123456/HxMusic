@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+<!--间隙留白轻量级的view子类用于布局的组件之间的创建间隙-->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="38dp" />
+<!--显示图片-->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo_trans" />
+<!-- 文本输入编辑框 EditText 用来接收软件键盘输入的文字，例如用户名、密码、评价内容等，
+它是由文本视图派生而来的，除了TextView 已有的各种属性和方法
+，EditText还支持下列XML属性
+1. maxLength: 指定文本允许输入的最大长度
+2. textColorHint: 指定提示文本的颜色
+3. hint：指定提示文本内容
+4. inputType : 限定文本输入类型，
+输入类型的取值，若同时使用多种文本类型，
+则可使用竖线“|”把多种文本类型拼接起来。
+ autofillHints 自动填充-->
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:autofillHints="username"
+        android:hint="@string/username_hint"
+        android:inputType="textNoSuggestions"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:autofillHints="password"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:maxLines="1" />
+
+
+    <Button
+        android:id="@+id/button_log"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:onClick="BT_logIn_onClick"
+        android:text="@string/login" />
+
+    <Button
+        android:id="@+id/button_sign"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:onClick="BT_signUp_onClick"
+        android:text="@string/sign" />
+</LinearLayout>
